@@ -122,8 +122,4 @@ async function updateChannel() {
 ## Additional Info
 <a name="additional-info"></a>
 
-- **API Key Middleware:**
-    The server uses authentication middleware, which checks for a valid api-key. The api-key route for generating an api-key is not included in this repo but can be found in my `expressway` repo. So for the sake of simplicity the middleware has been commented out in the `/src/index.ts` file.
-
-- **MongoDB Connection:**
-    The server connects to MongoDB to enable the use of the api-key middleware, this is handled in the `startServer` function in the `/src/index.ts` file. Due to the reasons described above this is commented out.
+The server uses authentication middleware, which verifies a valid API key for all routes. The implementation for this is not included in this repistory, therefore, for simplicity, the authenticate middleware has been commented out in the `src/index.ts` file.
