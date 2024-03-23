@@ -60,10 +60,10 @@ app.use('/api/v1/update-channel', updateChannelRoute);
 
 async function startServer (){ 
    try { 
-    if(!process.env.MONGODB_URL){
-      throw new Error('Invalid MongoDB URL')
-    }
-    await connectDB(process.env.MONGODB_URL); 
+    // if(!process.env.MONGODB_URL){
+    //   throw new Error('Invalid MongoDB URL')
+    // }
+    //  connectDB(process.env.MONGODB_URL); 
      app.listen(port, () => console.log(`Server started on port ${port}`)); 
    } catch (error) { 
      logger.error(error); 

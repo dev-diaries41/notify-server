@@ -1,14 +1,13 @@
-import mongoose from 'mongoose';
-
-async function connectDB(url: string) {
-  try {
-    mongoose.set('strictQuery', true);
-    await mongoose.connect(url);
-    console.log('Connected to MongoDB');
-  } catch (err) {
-    console.error('Failed to connect with MongoDB');
-    console.error(err);
-  }
-}
-
-export default connectDB;
+import mongoose from 'mongoose'; 
+  
+ async function connectDB (url: string) { 
+   mongoose.set('strictQuery', true); 
+   mongoose.connect(url) 
+     .then(() => console.log('connected to mongo')) 
+     .catch((err: any) => { 
+       console.error('failed to connect with mongo'); 
+       console.error(err); 
+     }); 
+ }; 
+  
+ export default connectDB;
