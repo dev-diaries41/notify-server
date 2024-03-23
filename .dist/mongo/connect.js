@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 async function connectDB(url) {
-    mongoose_1.default.set('strictQuery', true);
-    mongoose_1.default.connect(url)
-        .then(() => console.log('connected to mongo'))
-        .catch((err) => {
-        console.error('failed to connect with mongo');
+    try {
+        await mongoose_1.default.connect(url);
+        console.log('Connected to MongoDB');
+    }
+    catch (err) {
+        console.error('Failed to connect with MongoDB');
         console.error(err);
-    });
+    }
 }
-;
 exports.default = connectDB;
